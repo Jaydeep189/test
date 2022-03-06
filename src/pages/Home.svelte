@@ -3,6 +3,10 @@
     export let photo;
 </script>
 
+<svelte:head>
+	<title>Home Page</title>
+</svelte:head>
+
 <main>
     <div>
         <Link to="/mid">mid</Link>

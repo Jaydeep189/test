@@ -2,6 +2,11 @@
     export let comment;
 </script>
 
+
+<svelte:head>
+	<title>MID Page</title>
+</svelte:head>
+
 <main>
     <div>
         {#each comment as c}
