@@ -1,5 +1,5 @@
 <script>
-	const a = process.env.API_URL;
+	const a = process.env.TEST;
 </script>
 
 <main>
