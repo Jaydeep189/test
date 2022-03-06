@@ -1,5 +1,6 @@
 <script>
-	const a = process.env.TEST;
+	const a = process.env.SOME_OBJECT.TEST;
+	console.log(process.env);
 </script>
 
 <main>

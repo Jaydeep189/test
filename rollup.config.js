@@ -4,9 +4,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import dotenv from 'dotenv';
 import injectProcessEnv from 'rollup-plugin-inject-process-env';
 const production = !process.env.ROLLUP_WATCH;
-
+dotenv.config();
 function serve() {
 	let server;
 
@@ -47,8 +48,8 @@ export default {
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
 		injectProcessEnv({ 
-            NODE_ENV: 'production',
-            SOME_OBJECT: { one: 1, two: [1,2], three: '3' },
+            NODE_ENV: process.env.NODE_ENV,
+            SOME_OBJECT: { TEST: process.env.TEST },
             UNUSED: null
         }),
 		// If you have external dependencies installed from
