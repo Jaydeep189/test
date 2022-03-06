@@ -1,31 +1,26 @@
 <script>
-	const a = process.env.SOME_OBJECT.TEST;
-	console.log(process.env);
+	import {Router, Route} from 'svelte-navigator'
+	import Home from './pages/Home.svelte';
+	import Mid from './pages/Mid.svelte';
+	import { onMount } from 'svelte';
+
+	let photos = [];
+	let photoss = [];
+	onMount(async () => {
+		const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=5`);
+		photos = await res.json();
+		const ress = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=1`);
+		photoss = await ress.json();
+	});
 </script>
 
 <main>
-	<h1>Hello! {a}</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Router>
+		<Route path="/">
+			<Home photo= {photos}/>
+		</Route>
+		<Route path="/mid">
+			<Mid comment = {photoss}/>
+		</Route>
+	</Router>
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>

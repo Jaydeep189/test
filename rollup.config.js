@@ -49,6 +49,7 @@ export default {
 		css({ output: 'bundle.css' }),
 		injectProcessEnv({ 
             NODE_ENV: process.env.NODE_ENV,
+			DATA : 'asdasdasd',
             SOME_OBJECT: { TEST: process.env.TEST },
             UNUSED: null
         }),
