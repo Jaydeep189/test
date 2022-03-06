@@ -1,11 +1,9 @@
 <script>
-	import {env} from '../env'
-	const secret = env.YOUR_SECRET
-
+	const a = process.env.API_URL;
 </script>
 
 <main>
-	<h1>Hello!</h1>
+	<h1>Hello! {a}</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
