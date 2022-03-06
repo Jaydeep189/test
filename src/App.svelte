@@ -1,5 +1,6 @@
 <script>
 	import {Router, Route} from 'svelte-navigator'
+	import Cm from './pages/cm.svelte'
 	import Home from './pages/Home.svelte';
 	import Mid from './pages/Mid.svelte';
 	import { onMount } from 'svelte';
@@ -21,6 +22,9 @@
 		</Route>
 		<Route path="/mid">
 			<Mid comment = {photoss}/>
+		</Route>
+		<Route path="/cm">
+			<Cm comment = "this is also a page you dumb fuck"/>
 		</Route>
 	</Router>
 </main>
