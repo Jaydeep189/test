@@ -10,6 +10,7 @@
 <main>
     <div>
         <Link to="/mid">mid</Link>
+        <Link to="/cm">Cm</Link>
         {#each photo as p}
             <h1>{p.albumId}</h1>
             <h1>{p.id}</h1>
